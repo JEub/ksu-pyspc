@@ -39,5 +39,7 @@ warnings.simplefilter("ignore")
 
 
 from .ccharts import *
+from .sampledata import *
+
 from .pyspc import spc
 from .rules import rules

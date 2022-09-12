@@ -18,18 +18,18 @@ from .tables import d2
 import numpy as np
 
 
-class imrx(ccharts):
+class I_MR_X(ccharts):
 
-    _title = "X Chart"
+    _title = "IMRX"
 
     def __init__(self, sizecol=1):
-        super(imrx, self).__init__()
+        super(I_MR_X, self).__init__()
 
         self.size = sizecol - 1
 
     def plot(self, data, size, newdata=None):
 
-        sizes, data = [i for i in range(len(data))], data.T
+        sizes, data = data.T
         if self.size == 1:
             sizes, data = data, sizes
 

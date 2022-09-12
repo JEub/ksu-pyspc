@@ -18,12 +18,12 @@ from .tables import D3, D4
 import numpy as np
 
 
-class imrmr(ccharts):
+class I_MR_MR(ccharts):
 
-    _title = "Moving Range Chart"
+    _title = ""
 
     def __init__(self, sizecol=1):
-        super(imrmr, self).__init__()
+        super(I_MR_MR, self).__init__()
 
         self.size = sizecol - 1
 

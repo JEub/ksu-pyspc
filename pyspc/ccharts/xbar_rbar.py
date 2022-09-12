@@ -33,7 +33,7 @@ class xbar_rbar(ccharts):
             R.append(max(xs) - min(xs))
             X.append(np.mean(xs))
 
-        if newdata:
+        if newdata is not None:
             newvalues = [np.mean(xs) for xs in newdata]
 
         Rbar = np.mean(R)  # center
@@ -42,6 +42,8 @@ class xbar_rbar(ccharts):
         lcl = Xbar - A2[size] * Rbar
         ucl = Xbar + A2[size] * Rbar
 
+        if newvalues is not None:
+            return (newvalues, Xbar, lcl, ucl, self._title)
         return (X, Xbar, lcl, ucl, self._title)
 
 
@@ -59,7 +61,7 @@ class rbar(ccharts):
             assert len(xs) == size
             R.append(max(xs) - min(xs))
 
-        if newdata:
+        if newdata is not None:
             newvalues = [max(xs) - min(xs) for xs in newdata]
 
         Rbar = np.mean(R)  # center
@@ -67,4 +69,7 @@ class rbar(ccharts):
         lcl = D3[size] * Rbar
         ucl = D4[size] * Rbar
 
+        if newvalues is not None:
+            return (newvalues, Rbar, lcl, ucl, self._title)
+        
         return (R, Rbar, lcl, ucl, self._title)

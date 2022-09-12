@@ -18,12 +18,12 @@ from .tables import B3, B4
 import numpy as np
 
 
-class imrstd(ccharts):
+class I_MR_STD(ccharts):
 
-    _title = "Standard Deviation Chart"
+    _title = ""
 
     def __init__(self, sizecol=1):
-        super(imrstd, self).__init__()
+        super(I_MR_STD, self).__init__()
 
         self.size = sizecol - 1
 
